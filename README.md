@@ -1,6 +1,9 @@
 # RPG v5
 I try to build a text RPG, I go on break, repeat
 
+This is *just* a learning project for me to understand OOP and python properly, its not like an
+official thing lmao
+
 this project is still under development because I'm lazy,
 I'm most likely either on break from completing this or working hard on it.
 
