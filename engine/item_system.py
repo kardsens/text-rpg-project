@@ -1,4 +1,6 @@
 
+# stuff left: just looking at this makes me feel like ive missed something, fuck. FIX IT
+
 # item classes, inheriting from Item base class
 
 class Item: # done

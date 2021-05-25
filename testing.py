@@ -1,18 +1,21 @@
 import engine.game as game
-from engine.item_system import Weapon, Sword, Consumable, Magic
+from engine.item_system import Weapon, Sword, Consumable, Magic, Item
+from engine.combat_system import Attack
+
 
 if __name__ == '__main__':
-	game = game.Game('f',0)
-	bread = Consumable('bread',10)
-	carrot = Consumable('carrot',10)
-	game.player.give_item(carrot, 105)	
-	game.player.inventory.display()
-	
-	print(game.player.inventory.total_items(count_stacks=False))
 
-	
-	
+	game1 = game.Game('new player',0)
 
+
+	print(game1.player.name)
+	print(game1.clock.stats())
+
+	game1.load()
+
+	print(game1.player.name)
+	print(game1.clock.stats())
+	
 
 
 	

@@ -1,7 +1,11 @@
+
+# stuff left: idk lmao
+
 # imports
 
 import pickle
 import colorama
+from os import system, name 
 from colorama import Fore, Back, Style
 colorama.init()
 
@@ -10,6 +14,11 @@ colorama.init()
 
 # engine utility, helps test stuff and other handy stuff
 
+def clear(): 
+    if name == 'nt': 
+        _ = system('cls') 
+    else: 
+        _ = system('clear') 
 
 def save(content,filename='save'):
 	with open('..\\saves\\'+filename+'.sav','wb') as f:

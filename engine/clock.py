@@ -1,5 +1,8 @@
 # a clock to simulate in game time in a text rpg
 
+# stuff left: None
+
+
 class Clock:
 	def __init__(self, time=0, tickrate=1, day=1, phases=[], phaseindex=0, phaserate=20):
 		self.totaltime = time
@@ -23,7 +26,7 @@ class Clock:
 		for i in range(amount):
 			self.time += self.tickrate
 			self.totaltime += self.tickrate
-			if self.time >= self.dayrate: # if day over, inc day and set time to 0
+			if self.time >= self.dayrate: # if day over, inc day and set time to 0 
 				self.day += 1
 				self.time = 0
 				self.phaseindex = 0
@@ -44,7 +47,7 @@ class Clock:
 			setattr(self, param, values[param])
 
 	def stats(self):
-		print(f' TIME: {self.time}, DAY: {self.day}, TIME OF DAY: {self.phase}, TOTAL TIME: {self.totaltime}')
+		print(f' TIME: {self.time}/{self.dayrate}, DAY: {self.day}, TIME OF DAY: {self.phase}, TOTAL TIME: {self.totaltime}')
 
 if __name__ == '__main__':
 	clock = Clock()

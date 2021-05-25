@@ -1,5 +1,7 @@
 # entity system
 
+# stuff left: again, check if code feels hacked together and fix, try making it flexible
+
 import random
 
 class Entity:

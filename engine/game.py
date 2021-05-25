@@ -1,3 +1,6 @@
+
+# stuff left: the levels feel a bit messy, also maybe try coming up with a better name lmao
+
 from .clock import Clock
 from .util import Levels
 from .item_system import Stack
@@ -10,7 +13,7 @@ class Inventory:
 	def __init__(self):
 		self.items = []
 
-	def menu(self):
+	def menu(self): # INTERFACE RELATED
 		print('INVENTORY')
 		self.display()
 		print()
@@ -46,7 +49,7 @@ class Inventory:
 
 	# stack related section
 
-	def add_to_stack(self, item, amount=1): # INTERFACE RELATED
+	def add_to_stack(self, item, amount=1): 
 		remainder = amount
 		for stack in self.items:
 			if stack.item is item:
@@ -58,7 +61,7 @@ class Inventory:
 		if remainder:
 			self.add_to_stack(item, remainder)
 
-	def remove_from_stack(self, item, amount=1): # INTERFACE RELATED
+	def remove_from_stack(self, item, amount=1): 
 		remainder = amount
 		for stack in self.items[::-1]:
 			if stack.item is item:
@@ -68,7 +71,7 @@ class Inventory:
 		return remainder
 
 
-	def retrieve_from_stack(self, item, amount=1): # INTERFACE RELATED
+	def retrieve_from_stack(self, item, amount=1): 
 		remainder = self.remove_from_stack(item, amount)
 		return (item, amount-remainder)
 
@@ -187,6 +190,11 @@ class Player:
 		if self.mp < 0: self.mp = 0
 
 	def use_attack(self, attack, on):
+		attack(self, on)
+
+
+	'''
+	def use_attack(self, attack, on):
 		if self.check_required_stats(attack.req_stats) and self.check_required_levels(attack.req_lvls):
 			if not on: value = attack(self) # just something handy for some circumstances
 			else: value = attack(self, on)
@@ -203,10 +211,10 @@ class Player:
 
 	def use_magic(self, magic, on):
 		magic.use(self, on)
+	'''
 
 
-
-	# section for checking stuff
+	# section for checking stuff, IGNORE IF PANIC ATTACK
 
 	def check_required_stats(self, stats={}):
 		if stats:
@@ -246,11 +254,11 @@ class Game:
 		self.player = Player(name,gold,seed=seed,env_list=env_list,location=location)
 
 	def save(self,filename='save'):
-		with open('..\\saves\\'+filename+'.sav','wb') as f:
+		with open('saves\\'+filename+'.sav','wb') as f:
 			pickle.dump(self.__dict__, f, pickle.HIGHEST_PROTOCOL)
 
-	def load(self,filename='save'):
-		with open('..\\saves\\'+filename+'.sav','rb') as f:
+	def load(self,filename='save'):	
+		with open('saves\\'+filename+'.sav','rb') as f:
 			load_game = pickle.load(f)
 		self.__dict__.update(load_game)
 

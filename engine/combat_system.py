@@ -1,3 +1,60 @@
+# stuff left: check if code feels hacked together and/or messy, also like complete spells maybe idiot?
+
+'''
+class Attack:
+	def __init__(self, name, type_, execution):
+		self.name = name
+		self.type = type_
+		self.execution = execution
+
+	def __call__(self, attacker, victim=None):
+		self.execution(attacker, victim)
+'''	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Attack:
 	def __init__(self, name, damage, function=None, stat_decrease={}, req_stats={}, req_lvls={}): # stat_decrease = {'hp':10}
@@ -72,6 +129,7 @@ class Combo:
 	def current_item_title(self):
 		return self.combo_item_titles[self.current_combo_item_index]
 	
+
 
 
 
