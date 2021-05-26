@@ -3,6 +3,8 @@
 
 from .clock import Clock
 from .item_system import Stack
+from .environment import Map
+from .movement import MovementHandler
 
 import pickle
 import random
@@ -215,6 +217,9 @@ class Player:
 
 		self.mastery_tree = {'sword':0,'knife':0,'bow':0,'axe':0,'hammer':0}
 		self.mastery_points = 1
+
+		
+
 		
         
 	# add xp to general player level
@@ -328,6 +333,7 @@ class Player:
 class Game:
 	def __init__(self,name,gold,seed=0,env_list=[],location=None):
 		self.seed = seed
+		self.map = Map(seed, env_list, MovementHandler())
 		self.clock = Clock()
 		self.player = Player(name,gold,seed=seed,env_list=env_list,location=location)
 

@@ -7,4 +7,3 @@ class Item:
 	def use(self, **kwargs):
 		return self.use_function(kwargs)
 
-# edit
